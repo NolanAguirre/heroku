@@ -5,7 +5,6 @@ var pgp = require('pg-promise')( /*options*/ )
 //var db = pgp(process.env.DATABASE_URL);
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
-  //console.log('Time: ', Date.now());
   next();
 });
 // define the about route

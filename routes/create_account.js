@@ -1,12 +1,15 @@
 var express = require('express');
 var router = express.Router();
+var pgp = require('pg-promise')( /*options*/ )
+pgp.pg.defaults.ssl = true;
+var db = pgp(process.env.DATABASE_URL);
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
+  //console.log('Time: ', Date.now());
   next();
 });
 // define the about route
-router.put('/', function(req, res) {
+router.put(function(req, res) {
     console.log(req.body);
     db.one('SELECT EXISTS (SELECT 1 FROM users WHERE username = $1);', req.body.user.username)
         .then(function(data) {
@@ -19,8 +22,8 @@ router.put('/', function(req, res) {
         .catch(function(error) {
             console.log('ERROR:' + error)
         })
-});
-router.post('/', function(req ,res){
+})
+router.post(function(req ,res){
     console.log(req.body);
     db.none('INSERT INTO users (id, username, password) VALUES ($1, $2, $3)', [2, req.body.user.username, req.body.user.password])
         .then(function(data) {
@@ -34,8 +37,4 @@ router.post('/', function(req ,res){
             console.log('ERROR:' + error)
         })
 })
-router.get('/', function(req, res) {
-  res.render('index');
-});
-
 module.exports = router;

@@ -10,7 +10,8 @@ function create_account_controller($http, $window) {
     console.log("Don't break this code, it's using client side trust");
     vm.checkUsername = function() {
         vm.usernameBuffer = true;
-        $http.put(window.location.href, {
+        console.log(window.location.href)
+        $http.put('/create_account', {
             user: {
                 username: vm.username
             }
@@ -44,7 +45,7 @@ function create_account_controller($http, $window) {
     }
     vm.mkuser = function() {
         if (vm.checkPasswordMatch() && vm.checkPasswordStrength() && uniquePassword) {
-            $http.post(window.location.href, {
+            $http.post('/create_account', {
                 user: {
                     username: vm.username,
                     password: vm.password

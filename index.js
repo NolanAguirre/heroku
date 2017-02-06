@@ -11,6 +11,7 @@ var routes = {
     index: require('./routes/index'),
     create_account : require('./routes/create_account')
 }
+pgp.defaults.ssl = true;
 app.use(bodyParser.json()); // for parsing application/json
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');

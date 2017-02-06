@@ -8,7 +8,7 @@ function home_controller($http) {
     vm.log = function() {
         console.log('sending post request');
         if (vm.username != null && vm.password != null) {
-            $http.post('http://localhost:3000/', {
+            $http.post(window.location.href, {
                 "use": "log",
                 user: {
                     username: vm.username,

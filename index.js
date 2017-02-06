@@ -12,6 +12,7 @@ var routes = {
     index: require('./routes/index'),
     create_account : require('./routes/create_account')
 }
+app.set('port', (process.env.PORT || 5000));
 //console.log(process.env.DATABASE_URL);
 app.use(bodyParser.json()); // for parsing application/json
 app.set('views', __dirname + '/views');
@@ -56,7 +57,6 @@ app.put('/', function(req, res) {
     console.log('put request recieved')
     res.status(200).end();
 })
-app.listen(3000)
 
 function log(user) {
     db.one('SELECT password FROM users WHERE username = $1;', user.username)
@@ -85,3 +85,4 @@ function mkuser(user) {
             console.log('ERROR:', error)
         })
 }
+app.listen(app.get('port'));

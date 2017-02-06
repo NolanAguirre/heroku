@@ -11,6 +11,18 @@
 </head>
 
 <body>
+    <div style="margin-left:40%;width:60%;" ng-controller="nav_bar_controller">
+        <div style="display:inline-block;">
+            <h1>Node Demo Server</h1>
+        </div>
+        <div style="display:inline-block;float:right">
+            <img src="images/outline.png" style="height:50px;width:43px;border-radius:20px;" placeholder="outline"></img>
+            <div style="float:right;margin-top:20px;margin-left:10px;">
+                <a href="#/create_account" style="padding-right:10px;">Create account now</a>
+                <a href="#/loggin" style="padding-right:10px;">Log in</a>
+            </div>
+        </div>
+    </div>
     <div ng-view>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>

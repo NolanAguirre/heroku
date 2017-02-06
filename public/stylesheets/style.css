@@ -1,0 +1,123 @@
+.header {
+    height: 150px;
+    background-color: yellow;
+}
+
+.header h1 {
+    width: 300px;
+    margin: 0px auto;
+}
+
+.nav-bar {
+    height: 100px;
+    background-color: rgb(1, 246, 239);
+    padding: 0px 50px 0px 50px
+}
+
+.nav-bar div {
+    float: right;
+    vertical-align: middle;
+    line-height: 60px;
+}
+
+.main-body {
+    height: 500px;
+}
+
+.footer {
+    height: 100px;
+    background-color: black;
+}
+
+.create_account {}
+
+.create_account h1 {
+    text-align: center;
+}
+
+.make_user_form {
+    width: 600px;
+    border: 2px solid rgb(178, 205, 227);
+    border-radius: 10px;
+    margin: 0px auto;
+}
+
+.make_user_form input {
+    float: left;
+    width: 250px;
+    margin-top: 50px;
+    margin-left: 175px;
+}
+
+.make_user_form p {
+    float: left;
+    margin-top: 50px;
+    margin-left: 20px;
+    font-size: 12px;
+    color: gray;
+    width: 105px;
+}
+
+.make_user_form button {
+    outline: none;
+    margin: 50px 250px 50px 250px;
+    border-radius: 26px;
+    color: rgb(47, 50, 60);
+    background-color: rgb(27, 194, 179);
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    transition: background-color .5s, color .5s;
+}
+
+.make_user_form button:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(17, 241, 221);
+}
+
+.buffer {
+    margin-left: 10px;
+    float: left;
+    margin-top: 50px;
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 50%;
+    background: #ffffff;
+    background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    position: relative;
+    animation: load3 1.4s infinite linear;
+    transform: translateZ(0);
+}
+
+.buffer:before {
+    width: 50%;
+    height: 50%;
+    background: #000000;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+}
+
+.buffer:after {
+    background: #ffffff;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes load3 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

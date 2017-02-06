@@ -1,0 +1,32 @@
+{
+  "name": "heroku",
+  "version": "1.0.0",
+  "description": "demo website deployed using heroku",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "express": "4.14.0",
+    "multer": "1.2.0",
+    "pg-promise": "5.5.6",
+    "pug": "^2.0.0-beta6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NolanAguirre/heroku.git"
+  },
+  "keywords": [
+    "nolan",
+    "aguirre"
+  ],
+  "author": "Nolan Aguirre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NolanAguirre/heroku/issues"
+  },
+  "homepage": "https://github.com/NolanAguirre/heroku#readme"
+}

@@ -20,26 +20,26 @@ app.set('view engine', 'pug');
 app.use('/create_account', routes.create_account);
 
 app.use(express.static(path.join(__dirname, 'public')));
-// app.post('/', function(req, res, next) {
-//     console.log('post request recieved')
-//     console.log(req.body);
-//     switch (req.body.use) {
-//         case "log":
-//             if (log(req.body.user)) {
-//                 res.send("").status(200);
-//                 res.render();
-//             }
-//             break;
-//         case "mkuser":
-//             mkuser(req.body.user);
-//             break;
-//         default:
-//             console.log("unknown use sent by client");
-//             break;
-//     }
-//     res.status(200).end();
-//     //res.json(req.body);
-// });
+app.post('/', function(req, res, next) {
+    console.log('post request recieved')
+    console.log(req.body);
+    switch (req.body.use) {
+        case "log":
+            if (log(req.body.user)) {
+                res.send("").status(200);
+                res.render();
+            }
+            break;
+        case "mkuser":
+            mkuser(req.body.user);
+            break;
+        default:
+            console.log("unknown use sent by client");
+            break;
+    }
+    res.status(200).end();
+    //res.json(req.body);
+});
 
 app.get('/', function(req, res) {
     res.render('index');

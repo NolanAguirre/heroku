@@ -11,16 +11,16 @@
 </head>
 
 <body>
-    <div style="margin-left:40%;width:60%;" ng-controller="nav_bar_controller">
-        <div style="display:inline-block;">
+    <div class="nav-bar" ng-controller="nav_bar_controller">
+        <div>
+        </div>
+        <div>
             <h1>Node Demo Server</h1>
         </div>
-        <div style="display:inline-block;float:right">
-            <img src="images/outline.png" style="height:50px;width:43px;border-radius:20px;" placeholder="outline"></img>
-            <div style="float:right;margin-top:20px;margin-left:10px;">
-                <a href="#/create_account" style="padding-right:10px;">Create account now</a>
-                <a href="#/loggin" style="padding-right:10px;">Log in</a>
-            </div>
+        <div>
+            <img src="images/outline.png" placeholder="outline"></img>
+            <a href="#/create_account">Create account now</a>
+            <a href="#/loggin">Log in</a>
         </div>
     </div>
     <div ng-view>
@@ -31,6 +31,7 @@
     <script src="javascript/router/router.js"></script>
     <script src="javascript/controller/home_controller.js"></script>
     <script src="javascript/controller/create_account_controller.js"></script>
+    <script src="javascript/controller/nav_bar_controller.js"></script>
 </body>
 
 </html>

@@ -9,17 +9,23 @@
 }
 
 .nav-bar {
-    height: 100px;
-    background-color: rgb(1, 246, 239);
-    padding: 0px 50px 0px 50px
+    display:flex;
 }
-
-.nav-bar div {
-    float: right;
-    vertical-align: middle;
-    line-height: 60px;
+.nav-bar div{
+    width:33%;
 }
-
+.nav-bar div h1{
+    text-align: center;
+}
+.nav-bar div img{
+    height:50px;
+    width:43px;
+    border-radius:20px;
+    margin-top: 10px;
+}
+.nav-bar div a{
+    padding-right:10px;
+}
 .main-body {
     height: 500px;
 }

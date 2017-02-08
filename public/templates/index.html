@@ -1,16 +1,14 @@
-<div ng-controller="home_controller as vm">
-    <div class='nav-bar'>
-        <div>
-            <input ng-model="vm.username" placeholder="username"></input>
-            <input ng-model="vm.password" placeholder="password"></input>
-            <button ng-click="vm.log()">Log In</button>
-            <a href="#/create_account">Create Account</a>
+<div class="create_account">
+    <h1>Login</h1>
+    <div class="main-body">
+        <div class="make_user_form">
+            <input ng-change="vm.checkUsername();" ng-model="vm.username" placeholder="username"></input>
+            <div ng-if="vm.usernameBuffer" class="buffer"></div>
+            <p>{{vm.usernametaken}}</p>
+            <input ng-change="vm.checkPasswordStrength(); vm.checkPasswordMatch();" ng-model="vm.password" type="password" placeholder="password"></input>
+            <p>{{vm.passwordStrength}}</p>
+            <button ng-click="vm.mkuser()">Log</button>
         </div>
     </div>
-    <div class='main-body'>
 
-    </div>
-    <div class='footer'>
-
-    </div>
 </div>

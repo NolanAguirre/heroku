@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var pgp = require('pg-promise')( /*options*/ )
-//pgp.pg.defaults.ssl = true;
-//var db = pgp(process.env.DATABASE_URL);
+pgp.pg.defaults.ssl = true;
+var db = pgp(process.env.DATABASE_URL);
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
   next();

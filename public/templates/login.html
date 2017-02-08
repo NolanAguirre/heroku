@@ -1,12 +1,11 @@
-<div class="create_account">
+<div class="create_account" ng-controller="login_controller">
     <h1>Login</h1>
     <div class="main-body">
         <div class="make_user_form">
-            <input ng-change="vm.checkUsername();" ng-model="vm.username" placeholder="username"></input>
-            <div ng-if="vm.usernameBuffer" class="buffer"></div>
+            <input ng-model="vm.username" placeholder="username"></input>
             <p>{{vm.usernametaken}}</p>
-            <input ng-change="vm.checkPasswordStrength(); vm.checkPasswordMatch();" ng-model="vm.password" type="password" placeholder="password"></input>
-            <p>{{vm.passwordStrength}}</p>
+            <input ng-model="vm.password" type="password" placeholder="password"></input>
+            <p>{{vm.password}}</p>
             <button ng-click="vm.mkuser()">Log</button>
         </div>
     </div>

@@ -11,7 +11,7 @@ router.use(function timeLog(req, res, next) {
 // define the about route
 router.put('/',function(req, res) {
     console.log(req.body);
-    db.one('SELECT EXISTS (SELECT 1 FROM users WHERE username = $1);', req.body.user.username.toLowerCase())
+    db.one('SELECT EXISTS (SELECT 1 FROM users WHERE username = $1);', req.body.user.username)
         .then(function(data) {
             if (data.exists){
                 res.send(true).status(200);
@@ -25,7 +25,7 @@ router.put('/',function(req, res) {
 })
 router.post('/', function(req ,res){
     console.log(req.body);
-    db.none('INSERT INTO users (id, username, password) VALUES ($1, $2, $3)', [2, req.body.user.username.toLowerCase(), req.body.user.password])
+    db.none('INSERT INTO users (username, password) VALUES ($1, $2, $3)', [req.body.user.username, req.body.user.password])
         .then(function(data) {
             if (data.exists){
                 res.send(true).status(200);

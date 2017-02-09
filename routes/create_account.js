@@ -5,6 +5,7 @@ pgp.pg.defaults.ssl = true;
 var db = pgp(process.env.DATABASE_URL);
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
+    console.log("request sent to /create_account")
   next();
 });
 // define the about route

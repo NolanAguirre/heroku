@@ -6,11 +6,12 @@ create_account_controller.$inject = ['$http', '$window'];
 function create_account_controller($http, $window) {
     var vm = this;
     vm.usernameBuffer = false;
-    uniquePassword = false;
+    uniqueUsername = false;
     console.log("Don't break this code, it's using client side trust");
     var timer;
     vm.checkUsername = function() {
         vm.usernameBuffer = true;
+        uniqueUsername = false;
         clearTimeout(timer);
         timer = setTimeout(function(){
             $http.put('/create_account', {
@@ -19,7 +20,13 @@ function create_account_controller($http, $window) {
                 }
             }).success(function(data){
                 vm.usernameBuffer = false;
-                uniquePassword = !data;
+                uniqueUsername = !data;
+                if(!data){
+                    vm.usernameTaken = "username is available"
+                }else{
+                    vm.usernameTaken = "username is taken"
+                }
+
             }).error(function(){
                 console.log("Error connecting to database");
             });
@@ -47,7 +54,7 @@ function create_account_controller($http, $window) {
         }
     }
     vm.mkuser = function() {
-        if (vm.checkPasswordMatch() && vm.checkPasswordStrength() && uniquePassword) {
+        if (vm.checkPasswordMatch() && vm.checkPasswordStrength() && uniqueUsername) {
             $http.post('/create_account', {
                 user: {
                     username: vm.username,

@@ -7,7 +7,7 @@
             <div>
                 <input ng-change="vm.checkUsername();" ng-model="vm.username" placeholder="Username"></input>
                 <div ng-hide="!vm.usernameBuffer" class="buffer"></div>
-                <p>{{vm.usernametaken}}</p>
+                <p>{{vm.usernameTaken}}</p>
             </div>
             <div>
                 <input ng-change="vm.checkPasswordStrength(); vm.checkPasswordMatch();" ng-model="vm.password" type="password" placeholder="Password"></input>

@@ -1,0 +1,28 @@
+.header {
+    height: 150px;
+    background-color: yellow;
+}
+
+.header h1 {
+    width: 300px;
+    margin: 0px auto;
+}
+
+.nav-bar {
+    display:flex;
+}
+.nav-bar div{
+    width:33%;
+}
+.nav-bar div h1{
+    text-align: center;
+}
+.nav-bar div img{
+    height:50px;
+    width:43px;
+    border-radius:20px;
+    margin-top: 10px;
+}
+.nav-bar div a{
+    padding-right:10px;
+}

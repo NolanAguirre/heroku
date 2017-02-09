@@ -1,89 +1,58 @@
-.header {
-    height: 150px;
-    background-color: yellow;
-}
-
-.header h1 {
-    width: 300px;
-    margin: 0px auto;
-}
-
-.nav-bar {
-    display:flex;
-}
-.nav-bar div{
-    width:33%;
-}
-.nav-bar div h1{
-    text-align: center;
-}
-.nav-bar div img{
-    height:50px;
-    width:43px;
-    border-radius:20px;
-    margin-top: 10px;
-}
-.nav-bar div a{
-    padding-right:10px;
-}
-.main-body {
-    height: 500px;
-}
-
-.footer {
-    height: 100px;
-    background-color: black;
-}
-
 .create_account {}
 
 .create_account h1 {
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .make_user_form {
-    width: 600px;
-    border: 2px solid rgb(178, 205, 227);
-    border-radius: 10px;
+    width: 250px;
     margin: 0px auto;
+    height:1000px;
+    position:relative;
 }
-
+.make_user_form > div{
+    width: 400px;
+    display:flex;
+}
 .make_user_form input {
     float: left;
+    box-sizing: border-box;
+    border: 1px solid #bcbec1;
     width: 250px;
-    margin-top: 50px;
-    margin-left: 175px;
+    padding: 1rem;
+    margin-bottom: 3rem;
 }
 
 .make_user_form p {
-    float: left;
-    margin-top: 50px;
-    margin-left: 20px;
+    margin-left: 1rem;
     font-size: 12px;
     color: gray;
-    width: 105px;
 }
 
 .make_user_form button {
+    display: block;
+    border: none;
+    width: 100px;
+    margin: 0px auto;
     outline: none;
-    margin: 50px 250px 50px 250px;
-    border-radius: 26px;
-    color: rgb(47, 50, 60);
-    background-color: rgb(27, 194, 179);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(55, 194, 27);
     font-size: 20px;
     padding: 10px 20px 10px 20px;
     transition: background-color .5s, color .5s;
 }
 
 .make_user_form button:hover {
-    color: rgb(0, 0, 0);
-    background-color: rgb(17, 241, 221);
+    background-color: rgb(45, 210, 12);
+    cursor: pointer;
 }
 
 .buffer {
     margin-left: 10px;
     float: left;
-    margin-top: 50px;
+    margin-top: 14px;
     width: 1.3em;
     height: 1.3em;
     border-radius: 50%;

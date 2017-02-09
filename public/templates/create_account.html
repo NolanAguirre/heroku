@@ -4,13 +4,19 @@
     </h1>
     <div class="main-body">
         <div class="make_user_form">
-            <input ng-change="vm.checkUsername();" ng-model="vm.username" placeholder="username"></input>
-            <div ng-if="vm.usernameBuffer" class="buffer"></div>
-            <p>{{vm.usernametaken}}</p>
-            <input ng-change="vm.checkPasswordStrength(); vm.checkPasswordMatch();" ng-model="vm.password" type="password" placeholder="password"></input>
-            <p>{{vm.passwordStrength}}</p>
-            <input ng-change="vm.checkPasswordMatch();" ng-model="vm.passwordTwo" type="password" placeholder="re-enter password"></input>
-            <p>{{vm.passwordmatch}}</p>
+            <div>
+                <input ng-change="vm.checkUsername();" ng-model="vm.username" placeholder="Username"></input>
+                <div ng-hide="!vm.usernameBuffer" class="buffer"></div>
+                <p>{{vm.usernametaken}}</p>
+            </div>
+            <div>
+                <input ng-change="vm.checkPasswordStrength(); vm.checkPasswordMatch();" ng-model="vm.password" type="password" placeholder="Password"></input>
+                <p>{{vm.passwordStrength}}</p>
+            </div>
+            <div>
+                <input ng-change="vm.checkPasswordMatch();" ng-model="vm.passwordTwo" type="password" placeholder="re-enter Password"></input>
+                <p>{{vm.passwordmatch}}</p>
+            </div>
             <button ng-click="vm.mkuser()">submit</button>
         </div>
     </div>

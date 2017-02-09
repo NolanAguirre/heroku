@@ -9,11 +9,11 @@ function create_account_controller($http, $window) {
     uniquePassword = false;
     console.log("Don't break this code, it's using client side trust");
     var date = new Date();
-    var time;
+    var time = date.getTime();
     vm.checkUsername = function() {
         vm.usernameBuffer = true;
-        time = date.getSeconds();
-        if((time+2)%60 < date.getSeconds()){
+        if((time+2000) < date.getSeconds()){
+            time = date.getTime();
             $http.put('/create_account', {
                 user: {
                     username: vm.username

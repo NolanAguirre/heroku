@@ -8,12 +8,11 @@ function create_account_controller($http, $window) {
     vm.usernameBuffer = false;
     uniquePassword = false;
     console.log("Don't break this code, it's using client side trust");
-    var date = new Date();
-    var time = date.getTime();
+    var timer;
     vm.checkUsername = function() {
         vm.usernameBuffer = true;
-        if((time+2000) < date.getSeconds()){
-            time = date.getTime();
+        clearTimeout(timer);
+        timer = setTimeout(function(){
             $http.put('/create_account', {
                 user: {
                     username: vm.username
@@ -24,7 +23,7 @@ function create_account_controller($http, $window) {
             }).error(function(){
                 console.log("Error connecting to database");
             });
-        }
+        }, 1000);
     }
     vm.checkPasswordStrength = function() {
         if (vm.password != null && vm.password.length >= 6 && vm.password.match(/\d+/g) != null) {

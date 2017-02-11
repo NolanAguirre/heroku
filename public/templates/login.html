@@ -1,11 +1,10 @@
-<div class="create_account" ng-controller="login_controller">
+<div class="create_account" ng-controller="login_controller as vm">
     <h1>Login</h1>
     <div class="main-body">
         <div class="make_user_form">
-            <input ng-model="vm.usernameTaken" placeholder="username"></input>
+            <input ng-model="vm.username" placeholder="username"></input>
             <input ng-model="vm.password" type="password" placeholder="password"></input>
-            <button ng-click="vm.mkuser()">Log</button>
+            <button ng-click="vm.login()">Log</button>
         </div>
     </div>
-
 </div>

@@ -1,0 +1,32 @@
+<div class="chat" ng-controller="chat_controller as vm">
+    <div class="friends">
+
+    </div>
+    <div class="chat-box">
+        <div></div>
+        <div id="chat-display" class="chat-display">
+            <div>
+                <div class="recive-chat">
+                    <div ng-repeat="message in vm.messages.recive track by $index">
+                        <div class="chat-bubble">
+                            {{message}}
+                        </div>
+                    </div>
+                </div>
+                <div class="sent-chat">
+                    <div ng-repeat="message in vm.messages.sent track by $index">
+                        <div class="chat-bubble">
+                            {{message}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="input-outer">
+                <div id="input" class="input-inner" contenteditable="true"></div>
+            </div>
+            <button ng-click="vm.send()">send</button>
+        </div>
+    </div>
+</div>

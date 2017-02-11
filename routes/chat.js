@@ -6,7 +6,7 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 // define the about route
-router.put('/',function(req, res) {
+router.get('/',function(req, res) {
     db.one('SELECT EXISTS (SELECT 1 FROM users WHERE username = $1);', req.body.user.username)
         .then(function(data) {
             if (data.exists){

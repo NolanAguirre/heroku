@@ -20,9 +20,9 @@ function create_account_controller($http, $window) {
                 }
             }).success(function(data){
                 vm.usernameBuffer = false;
-                uniqueUsername = !data;
                 if(!data){
                     vm.usernameTaken = "username is available"
+                    uniqueUsername = true;
                 }else{
                     vm.usernameTaken = "username is taken"
                 }

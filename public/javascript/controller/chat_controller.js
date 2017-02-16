@@ -1,10 +1,11 @@
 angular.module('myapp')
     .controller('chat_controller', chat_controller);
 
-chat_controller.$inject = ['$http', '$window'];
+chat_controller.$inject = ['$http', '$window', 'user_service'];
 
-function chat_controller($http, $window) {
-    var vm = this
+function chat_controller($http, $window, user_service) {
+    var vm = this;
+    vm.service = user_service;
     vm.messages = {
         recive: [],
         sent: []

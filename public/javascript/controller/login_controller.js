@@ -1,10 +1,11 @@
 angular.module('myapp')
     .controller('login_controller', login_controller);
 
-login_controller.$inject = ['$http', '$location'];
+login_controller.$inject = ['$http', '$location', 'user_service'];
 
-function login_controller($http, $location) {
+function login_controller($http, $location, user_service) {
     var vm = this;
+    vm.service = user_service;
     vm.login = function(){
         console.log('sending login info')
         $http.put('/login', {
@@ -13,10 +14,12 @@ function login_controller($http, $location) {
                 password: vm.password
             }
         }).success(function(data){
-            if(data == false){
-
+            console.log(data);
+            if(data.logged){
+                vm.service.userData(data);
+                $location.path("/chat")
             }else{
-                $location.path("/chat");
+
             }
 
         }).error(function(){

@@ -2,6 +2,30 @@
     width: 600px;
     margin: 0 auto;
 }
+.tint{
+    background-color: rgb(17, 91, 138);
+    opacity: .3;
+    z-index:4;
+    transition: opacity 1s;
+}
+.not-logged a{
+    text-decoration: none;
+    color:black;
+    z-index:5;
+    display: none;
+    position: absolute;
+    font-size: 1.5em;
+    width: 210px;
+    top: 200px;
+    left: 424px;
+    cursor: pointer;
+}
+.tint:hover{
+    opacity: .4;
+}
+.not-logged:hover a{
+    display: block;
+}
 .chat-box{
 
 }

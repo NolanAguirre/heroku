@@ -31,4 +31,29 @@
             </div>
         </div>
     </div>
+    <div class="not-logged"ng-hide="vm.service.logged">
+        <a href="#/login">Log in to enable chat</a>
+        <div class="tint">
+            <div class="friends">
+
+            </div>
+            <div class="chat-box">
+                <div></div>
+                <div id="chat-display" class="chat-display">
+                    <div>
+                        <div class="recive-chat">
+                        </div>
+                        <div class="sent-chat">
+                        </div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div>
+                        <div id="input"></div>
+                    </div>
+                    <button disabled="true"ng-click="vm.send()">send</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

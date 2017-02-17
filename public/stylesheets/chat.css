@@ -8,6 +8,9 @@
     z-index:4;
     transition: opacity 1s;
 }
+.not-logged{
+    position: relative;
+}
 .not-logged a{
     text-decoration: none;
     color:black;
@@ -16,8 +19,8 @@
     position: absolute;
     font-size: 1.5em;
     width: 210px;
-    top: 200px;
-    left: 424px;
+    top: 150px;
+    left: 210px;
     cursor: pointer;
 }
 .tint:hover{

@@ -23,20 +23,22 @@
                 <a href="#/chat">chat</a>
             </div>
         </div>
-        <div ng-hide="vm.service.logged">
+        <div ng-hide="vm.service.userData.logged">
             <img src="images/outline.png" placeholder="outline"></img>
             <a href="#/create_account">Create account now</a>
             <a href="#/login">Log in</a>
         </div>
-        <div ng-hide="!vm.service.logged">
+        <div ng-hide="!vm.service.userData.logged">
         </div>
     </div>
     <div ng-view>
     </div>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script> -->
     <script src="javascript/angular/angular.js"></script>
     <script src="javascript/angular-route/angular-route.js"></script>
+    <script src="javascript/angular-cookies/angular-cookies.js"></script>
     <script src="javascript/index.js"></script>
     <script src="javascript/index.js"></script>
     <script src="javascript/router/router.js"></script>

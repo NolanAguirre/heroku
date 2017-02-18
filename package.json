@@ -5,12 +5,14 @@
   "main": "index.js",
   "dependencies": {
     "angular": "1.5.8",
+    "angular-cookies": "1.5.8",
     "angular-route": "1.5.8",
     "body-parser": "1.15.2",
     "express": "4.14.0",
     "multer": "1.2.0",
     "pg-promise": "5.5.6",
-    "pug": "^2.0.0-beta6"
+    "pug": "^2.0.0-beta6",
+    "socket.io": "1.7.3"
   },
   "engines": {
     "node": "4.6.0"

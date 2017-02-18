@@ -16,7 +16,7 @@ function login_controller($http, $location, user_service) {
         }).success(function(data){
             console.log(data);
             if(data.logged){
-                vm.service.userData(data);
+                vm.service.loadUserData(data);
                 $location.path("/chat")
             }else{
 

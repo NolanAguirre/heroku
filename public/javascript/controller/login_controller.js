@@ -1,9 +1,9 @@
 angular.module('myapp')
     .controller('login_controller', login_controller);
 
-login_controller.$inject = ['$http', '$location', 'user_service'];
+login_controller.$inject = ['$http', '$location', '$timeout', 'user_service'];
 
-function login_controller($http, $location, user_service) {
+function login_controller($http, $location,$timeout, user_service) {
     var vm = this;
     vm.service = user_service;
     vm.login = function(){
@@ -17,7 +17,9 @@ function login_controller($http, $location, user_service) {
             console.log(data);
             if(data.logged){
                 vm.service.loadUserData(data);
-                $location.path("/chat")
+                $timeout(function(){
+                    $location.path("/chat");
+                }, 100);
             }else{
 
             }

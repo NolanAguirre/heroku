@@ -3,7 +3,7 @@ angular.module('myapp')
 
 user_service.$inject = ['$cookies'];
 
-function user_service($cookies){
+function user_service($cookies) {
     var service = this;
     service.userData = {
         logged: $cookies.get('logged'),
@@ -11,11 +11,21 @@ function user_service($cookies){
         name: $cookies.get('name'),
         profilePicture: $cookies.get('profilePicture')
     }
-    service.loadUserData = function(data){
-        $cookies.put('logged', data.logged, new Date().setTime(new Date().getTime()+3600000));
-        $cookies.put('username', data.username, new Date().setTime(new Date().getTime()+3600000));
-        $cookies.put('name', data.name, new Date().setTime(new Date().getTime()+3600000));
-        $cookies.put('profilePicture', data.profilePicture, new Date().setTime(new Date().getTime()+3600000));
+    service.loadUserData = function(data) {
+        var date = new Date();
+        date.setMinutes(new Date().getMinutes() + 120);
+        $cookies.put('logged', data.logged, {
+            expires: date
+        });
+        $cookies.put('username', data.username, {
+            expires: date
+        });
+        $cookies.put('name', data.name, {
+            expires: date
+        });
+        $cookies.put('profilePicture', data.profilePicture, {
+            expires: date
+        });
     }
 
 }

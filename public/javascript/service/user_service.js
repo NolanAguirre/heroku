@@ -9,7 +9,8 @@ function user_service($cookies, $rootScope) {
         logged: function(){return $cookies.get('logged')},
         username: $cookies.get('username'),
         name: $cookies.get('name'),
-        profilePicture: $cookies.get('profilePicture')
+        profilePicture: $cookies.get('profilePicture'),
+        friends: ['bob', 'joe', 'dave', 'chuck', 'jacob', 'david']
     }
     service.loadUserData = function(data) {
         var date = new Date();

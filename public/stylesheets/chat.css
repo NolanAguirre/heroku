@@ -1,12 +1,29 @@
 .chat{
-    width: 600px;
+    width: 1000px;
     margin: 0 auto;
+    display:flex;
 }
 .tint{
     background-color: rgb(17, 91, 138);
     opacity: .3;
     z-index:4;
     transition: opacity 1s;
+}
+.friends{
+    width:196px;
+    margin-right: 4px;
+    height:550px;
+    overflow: auto;
+    float:left;
+}
+.friends::-webkit-scrollbar {
+    display:none;
+}
+.friend{
+    height: 50px;
+}
+.friend:hover{
+    background-color:rgba(105, 105, 105, 0.47);
 }
 .not-logged{
     position: relative;
@@ -22,6 +39,7 @@
     top: 150px;
     left: 210px;
     cursor: pointer;
+    height: 500px;
 }
 .tint:hover{
     opacity: .4;
@@ -30,7 +48,7 @@
     display: block;
 }
 .chat-box{
-
+    float:left;
 }
 .chat-display{
     overflow: auto;

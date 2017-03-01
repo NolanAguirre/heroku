@@ -1,15 +1,16 @@
 angular.module('myapp')
     .controller('create_account_controller', create_account_controller);
 
-create_account_controller.$inject = ['$http', '$window'];
+create_account_controller.$inject = ['$http'];
 
-function create_account_controller($http, $window) {
+function create_account_controller($http) {
     var vm = this;
     vm.usernameBuffer = false;
     uniqueUsername = false;
     console.log("Don't break this code, it's using client side trust");
     var timer;
     vm.checkUsername = function() {
+        console.log($http);
         vm.usernameBuffer = true;
         uniqueUsername = false;
         clearTimeout(timer);

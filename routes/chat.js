@@ -1,13 +1,5 @@
-var express = require('express');
-var router = express.Router();
-// middleware that is specific to this router
-router.use(function timeLog(req, res, next) {
-    console.log('chat router being used');
-  next();
-});
+exports.chat = function(req, res) {
+    var io = req.app.get('socketio');
+    console.log("hi");
 
-// define the about route
-router.put('/',function(req, res) {
-
-})
-module.exports = router;
+};

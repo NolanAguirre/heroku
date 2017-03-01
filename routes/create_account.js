@@ -20,7 +20,7 @@ router.put('/',function(req, res) {
         })
 })
 router.post('/', function(req ,res){
-    db.none('INSERT INTO users (username, password) VALUES ($1, $2)', [req.body.user.username, req.body.user.password])
+    db.none('INSERT INTO users (username, password) VALUES ($1, $2);', [req.body.user.username, req.body.user.password])
         .then(function(data) {
             res.send(true).status(200);
         })

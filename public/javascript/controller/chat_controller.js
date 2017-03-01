@@ -5,6 +5,7 @@ chat_controller.$inject = ['$http', '$window', 'user_service'];
 
 function chat_controller($http, $window, user_service) {
     var vm = this;
+    var socket = io.connect();
     vm.service = user_service;
     vm.messages = {
         recive: [],
@@ -19,17 +20,12 @@ function chat_controller($http, $window, user_service) {
         if (document.getElementById('input').innerHTML != "") {
             vm.messages.sent.push(document.getElementById('input').innerHTML);
             document.getElementById('chat-display').scrollTop = 10000;
-            $http.put('/chat', {
-                //  user: {
-                //      username: vm.username,
-                //      message: vm.message
-                //  }
-            }).success(function(data) {
-                if (data) {
-
+            socket.emit('message', {
+                message:{
+                    from: vm.service.userData.username,
+                    to: "bob",
+                    data: document.getElementById('input').innerHTML
                 }
-            }).error(function() {
-                console.log("Error connecting to database");
             });
             if (vm.messages.sent.length == 100) {
                 vm.messages.sent = vm.messages.sent.splice(1, 99);

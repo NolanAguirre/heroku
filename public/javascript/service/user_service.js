@@ -1,12 +1,12 @@
 angular.module('myapp')
     .service('user_service', user_service);
 
-user_service.$inject = ['$cookies'];
+user_service.$inject = ['$cookies', '$rootScope'];
 
-function user_service($cookies) {
+function user_service($cookies, $rootScope) {
     var service = this;
     service.userData = {
-        logged: $cookies.get('logged'),
+        logged: function(){return $cookies.get('logged')},
         username: $cookies.get('username'),
         name: $cookies.get('name'),
         profilePicture: $cookies.get('profilePicture')

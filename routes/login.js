@@ -6,7 +6,7 @@ exports.login = function(req ,res){
             if (data.password == req.body.user.password){
                 res.json({
                     logged: true,
-                    username: "hi",
+                    username: req.body.user.username,
                     name: "dave",
                     profilePicture: ""
                 });

@@ -1,5 +1,5 @@
 <div class="chat" ng-controller="chat_controller as vm">
-    <div ng-hide="!vm.service.userData.logged">
+    <div ng-hide="!vm.service.userData.logged()">
         <div class="friends">
 
         </div>
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="not-logged"ng-hide="vm.service.userData.logged">
+    <div class="not-logged"ng-hide="vm.service.userData.logged()">
         <a href="#/login">Log in to enable chat</a>
         <div class="tint">
             <div class="friends">

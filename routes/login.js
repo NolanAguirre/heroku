@@ -15,6 +15,7 @@ exports.login = function(req ,res){
             }
         })
         .catch(function(error) {
-            console.log('ERROR:' + error)
+            console.log('ERROR:' + error);
+            res.send(false).status(200);
         })
 }

@@ -10,7 +10,6 @@ function create_account_controller($http) {
     console.log("Don't break this code, it's using client side trust");
     var timer;
     vm.checkUsername = function() {
-        console.log($http);
         vm.usernameBuffer = true;
         uniqueUsername = false;
         clearTimeout(timer);
@@ -31,7 +30,7 @@ function create_account_controller($http) {
             }).error(function(){
                 console.log("Error connecting to database");
             });
-        }, 1000);
+        }, 500);
     }
     vm.checkPasswordStrength = function() {
         if (vm.password != null && vm.password.length >= 6 && vm.password.match(/\d+/g) != null) {

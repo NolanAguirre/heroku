@@ -29,16 +29,18 @@
             <a href="#/login">Log in</a>
         </div>
         <div ng-hide="!vm.service.userData.logged()">
+            <img style="float:left;"src="vm.service.userData.profilePicture()" onerror="this.src = 'images/outline.png'">
+            <h3 style="line-height:55px; margin-left:50px;"> Welcome {{vm.service.userData.name()}}</h3>
         </div>
     </div>
     <div ng-view>
     </div>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script> -->
-    <script src="javascript/angular/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
+    <!-- <script src="javascript/angular/angular.js"></script>
     <script src="javascript/angular-route/angular-route.js"></script>
-    <script src="javascript/angular-cookies/angular-cookies.js"></script>
+    <script src="javascript/angular-cookies/angular-cookies.js"></script> -->
     <script src="/socket.io/socket.io.js"></script>
     <script src="javascript/index.js"></script>
     <script src="javascript/index.js"></script>

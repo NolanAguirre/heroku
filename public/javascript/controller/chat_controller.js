@@ -1,9 +1,9 @@
 angular.module('myapp')
     .controller('chat_controller', chat_controller);
 
-chat_controller.$inject = ['$http', '$window', 'user_service'];
+chat_controller.$inject = ['$http','$scope', '$window', 'user_service'];
 
-function chat_controller($http, $window, user_service) {
+function chat_controller($http, $scope, $window, user_service) {
     var vm = this;
     var socket = io.connect();
     vm.service = user_service;
@@ -36,6 +36,7 @@ function chat_controller($http, $window, user_service) {
     $window.onkeyup = function(e) {
         if (e.which == 13) {
             vm.send();
+            $scope.$apply()
         }
     }
 }

@@ -2,9 +2,10 @@
     <div ng-hide="!vm.service.userData.logged()">
         <div class="friends">
             <div>
-                <div ng-repeat="friend in vm.service.userData.friends">
+                <div ng-repeat="friend in vm.service.userData.friends track by $index">
                     <div class="friend">
                         {{friend}}
+                        <img src="../images/outline.png"></img>
                     </div>
                 </div>
             </div>

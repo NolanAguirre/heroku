@@ -8,9 +8,9 @@ function user_service($cookies) {
     service.userData = {
         logged: function(){return $cookies.get('logged')},
         username: $cookies.get('username'),
-        name: $cookies.get('name'),
-        profilePicture: $cookies.get('profilePicture'),
-        friends: ['bob', 'joe', 'dave', 'chuck', 'jacob', 'david']
+        name: function(){return $cookies.get('name')},
+        profilePicture: function(){return $cookies.get('profilePicture')},
+        friends: ['bob', 'joe', 'dave', 'chuck', 'jacob', 'david', 'hi', 'hi', 'chuck', 'jacob', 'david', 'hi', 'hi']
     }
     service.loadUserData = function(data) {
         var date = new Date();

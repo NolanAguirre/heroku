@@ -1,13 +1,30 @@
+.chat-header{
+    height: 50px;
+    width:900px;
+    margin:0 auto;
+    display:flex;
+}
+.friends-header{
+    width: 200px;
+}
+.chat-box-header{
+    width:598px;
+}
 .chat{
-    width: 1000px;
+    width: 900px;
     margin: 0 auto;
     display:flex;
 }
 .tint{
+    background-color: rgba(17, 91, 138, 0.74);
+    height: 550px;
+    opacity: .4;
+    z-index:1;
+    transition: background-color 1s, opacity 1s;;
+}
+.tint:hover{
     background-color: rgb(17, 91, 138);
-    opacity: .3;
-    z-index:4;
-    transition: opacity 1s;
+    opacity: .6px;
 }
 .friends{
     width:196px;
@@ -37,7 +54,9 @@
     background-color:rgba(105, 105, 105, 0.47);
 }
 .not-logged{
-    position: relative;
+    width: 598px;
+    margin: 0 auto;
+    display:flex;
 }
 .not-logged a{
     text-decoration: none;
@@ -48,12 +67,9 @@
     font-size: 1.5em;
     width: 210px;
     top: 150px;
-    left: 210px;
+    left: 205px;
     cursor: pointer;
-    height: 500px;
-}
-.tint:hover{
-    opacity: .4;
+    height: 30px;
 }
 .not-logged:hover a{
     display: block;
@@ -93,12 +109,17 @@
 .controls > div{
     width: 398px;
     height:38px;
-    margin-top: 5px;
+    margin-left: 100px;
+    margin-right: 100px;
     overflow: auto;
     box-sizing: border-box;
-    border: 1px solid #bcbec1;
-}
+    border: 1px solid rgb(150, 183, 232);
+    border-top: 1px solid rgb(108, 157, 230);
 
+}
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
 .controls > div::-webkit-scrollbar {
     display:none;
 }
@@ -106,9 +127,4 @@
     padding-top: 11px;
     padding-bottom: 11px;
     font-size: 16px;
-}
-.controls > button{
-    width: 200px;
-    margin-right: 50px;
-    margin-left: 50px;
 }

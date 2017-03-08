@@ -7,7 +7,6 @@ function login_controller($http, $location, $timeout, user_service) {
     var vm = this;
     vm.service = user_service;
     vm.login = function() {
-        console.log($http);
         if (vm.username != undefined && vm.password != undefined && vm.password.length > 5) {
             console.log('sending login info')
             $http.put('/login', {
@@ -16,7 +15,6 @@ function login_controller($http, $location, $timeout, user_service) {
                     password: vm.password
                 }
             }).success(function(data) {
-                console.log(data);
                 if (data.logged) {
                     vm.service.loadUserData(data);
                     $location.path("/chat");

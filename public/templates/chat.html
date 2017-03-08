@@ -1,63 +1,75 @@
-<div class="chat" ng-controller="chat_controller as vm">
+<div ng-controller="chat_controller as vm">
     <div ng-hide="!vm.service.userData.logged()">
-        <div class="friends">
-            <div>
-                <div ng-repeat="friend in vm.service.userData.friends track by $index">
-                    <div class="friend">
-                        {{friend}}
-                        <img src="../images/outline.png"></img>
-                    </div>
-                </div>
+        <div class="chat-header">
+            <div class="friends-header">
+                <h3>
+                Friends
+            </h3>
+            </div>
+            <div class="chat-box-header">
             </div>
         </div>
-        <div class="chat-box">
-            <div></div>
-            <div id="chat-display" class="chat-display">
+        <div class="chat">
+            <div class="friends">
                 <div>
-                    <div class="recive-chat">
-                        <div ng-repeat="message in vm.messages.recive track by $index">
-                            <div class="chat-bubble">
-                                {{message}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sent-chat">
-                        <div ng-repeat="message in vm.messages.sent track by $index">
-                            <div class="chat-bubble">
-                                {{message}}
-                            </div>
+                    <div ng-repeat="friend in vm.service.userData.friends track by $index">
+                        <div class="friend">
+                            {{friend}}
+                            <img src="../images/outline.png"></img>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="controls">
-                <div>
-                    <div id="input" contenteditable="true"></div>
-                </div>
-                <button ng-click="vm.send()">send</button>
-            </div>
-        </div>
-    </div>
-    <div class="not-logged"ng-hide="vm.service.userData.logged()">
-        <a href="#/login">Log in to enable chat</a>
-        <div class="tint">
             <div class="chat-box">
                 <div></div>
                 <div id="chat-display" class="chat-display">
                     <div>
                         <div class="recive-chat">
+                            <div ng-repeat="message in vm.messages.recive track by $index">
+                                <div class="chat-bubble">
+                                    {{message}}
+                                </div>
+                            </div>
                         </div>
                         <div class="sent-chat">
+                            <div ng-repeat="message in vm.messages.sent track by $index">
+                                <div class="chat-bubble">
+                                    {{message}}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="controls">
                     <div>
-                        <div id="input"></div>
+                        <div id="input" contenteditable="true"></div>
                     </div>
-                    <button disabled="true"ng-click="vm.send()">send</button>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="not-logged" ng-hide="vm.service.userData.logged()">
+        <div style="position:relative;">
+            <a href="#/login">Log in to enable chat</a>
+            <div class="tint">
+                <div class="chat-box">
+                    <div></div>
+                    <div id="chat-display" class="chat-display">
+                        <div>
+                            <div class="recive-chat">
+                            </div>
+                            <div class="sent-chat">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <div>
+                            <div id="input"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

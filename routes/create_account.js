@@ -20,6 +20,10 @@ router.put('/',function(req, res) {
         })
 })
 router.post('/', function(req ,res){
+    db.none('CREATE TABLE ' + req.body.user.username + ' (username text, message text[10], proirity integer[10])')
+        .catch(function(error) {
+            console.log('ERROR:' + error)
+        })
     db.none('INSERT INTO users (username, password) VALUES ($1, $2);', [req.body.user.username, req.body.user.password])
         .then(function(data) {
             res.send(true).status(200);

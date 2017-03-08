@@ -6,10 +6,16 @@ user_service.$inject = ['$cookies'];
 function user_service($cookies) {
     var service = this;
     service.userData = {
-        logged: function(){return $cookies.get('logged')},
+        logged: function() {
+            return $cookies.get('logged')
+        },
         username: $cookies.get('username'),
-        name: function(){return $cookies.get('name')},
-        profilePicture: function(){return $cookies.get('profilePicture')},
+        name: function() {
+            return $cookies.get('name')
+        },
+        profilePicture: function() {
+            return $cookies.get('profilePicture')
+        },
         friends: ['bob', 'joe', 'dave', 'chuck', 'jacob', 'david', 'hi', 'hi', 'chuck', 'jacob', 'david', 'hi', 'hi']
     }
     service.loadUserData = function(data) {
@@ -27,6 +33,12 @@ function user_service($cookies) {
         $cookies.put('profilePicture', data.profilePicture, {
             expires: date
         });
+        console.log(data.friends);
+        data.friends.forEach(function(friend){
+                $cookies.put(friend.username, friend, {
+                expires: date
+                });
+        })
     }
 
 }

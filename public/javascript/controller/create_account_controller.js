@@ -61,7 +61,7 @@ function create_account_controller($http) {
                     password: vm.password
                 }
             });
-            window.location.href = '/#/account_created';
+            window.location.href = '/#/create_account/upload_picture';
         }
 
     }

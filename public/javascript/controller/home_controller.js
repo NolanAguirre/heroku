@@ -14,9 +14,9 @@ function home_controller($http) {
                     username: vm.username,
                     password: vm.password
                 }
-            }).success(function(data){
+            }).success(function(data) {
                 console.log(data);
-            }).error(function(){
+            }).error(function() {
                 console.log("Adam Touched It (its broken)");
             });
         }

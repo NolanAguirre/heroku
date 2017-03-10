@@ -13,21 +13,21 @@ function create_account_controller($http) {
         vm.usernameBuffer = true;
         uniqueUsername = false;
         clearTimeout(timer);
-        timer = setTimeout(function(){
+        timer = setTimeout(function() {
             $http.put('/create_account', {
                 user: {
                     username: vm.username
                 }
-            }).success(function(data){
+            }).success(function(data) {
                 vm.usernameBuffer = false;
-                if(!data){
+                if (!data) {
                     vm.usernameTaken = "username is available"
                     uniqueUsername = true;
-                }else{
+                } else {
                     vm.usernameTaken = "username is taken"
                 }
 
-            }).error(function(){
+            }).error(function() {
                 console.log("Error connecting to database");
             });
         }, 500);

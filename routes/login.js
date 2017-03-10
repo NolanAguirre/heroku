@@ -31,11 +31,11 @@ function loadFriends(username) {
         .catch(function(error) {
             console.log('ERROR:' + error);
         })
-    friends.forEach(function(freind){
+    friends.forEach(function(freind) {
         db.one('SELECT 1 FROM users WHERE username = $1', username)
             .then(function(data) {
                 friendsObj.push({
-                    username : data.username,
+                    username: data.username,
                     name: data.name,
                     profilePicture: data.profilePicture
                 })
@@ -44,5 +44,5 @@ function loadFriends(username) {
                 console.log('ERROR:' + error);
             })
     })
-        return friendsObj;
+    return friendsObj;
 }

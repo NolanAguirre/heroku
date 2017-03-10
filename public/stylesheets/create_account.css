@@ -8,13 +8,15 @@
 .make_user_form {
     width: 250px;
     margin: 0px auto;
-    height:1000px;
-    position:relative;
+    height: 1000px;
+    position: relative;
 }
-.make_user_form > div{
+
+.make_user_form>div {
     width: 400px;
-    display:flex;
+    display: flex;
 }
+
 .make_user_form input {
     float: left;
     box-sizing: border-box;

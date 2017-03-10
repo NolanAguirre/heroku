@@ -34,10 +34,10 @@ function user_service($cookies) {
             expires: date
         });
         console.log(data.friends);
-        data.friends.forEach(function(friend){
-                $cookies.put(friend.username, friend, {
+        data.friends.forEach(function(friend) {
+            $cookies.put(friend.username, friend, {
                 expires: date
-                });
+            });
         })
     }
 

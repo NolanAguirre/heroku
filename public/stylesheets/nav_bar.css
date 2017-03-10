@@ -1,35 +1,42 @@
 .nav-bar {
-    display:flex;
+    display: flex;
 }
-.nav-bar div{
-    width:33%;
+
+.nav-bar div {
+    width: 33%;
 }
+
 .nav-bar-options a {
     text-decoration: none;
-    color:black;
+    color: black;
     padding-bottom: 50px;
 }
 
-.nav-bar div h1{
+.nav-bar div h1 {
     text-align: center;
 }
-.nav-bar div img{
-    height:50px;
-    width:43px;
-    border-radius:20px;
+
+.nav-bar div img {
+    height: 50px;
+    width: 43px;
+    border-radius: 20px;
     margin-top: 10px;
 }
-.nav-bar div a{
-    padding-right:10px;
+
+.nav-bar div a {
+    padding-right: 10px;
 }
-.nav-bar-options{
+
+.nav-bar-options {
     display: flex;
 }
-.nav-bar-options div{
+
+.nav-bar-options div {
     width: 3rem;
     margin-left: 5px;
     margin-right: 5px;
 }
-.nav-bar-options div:hover{
+
+.nav-bar-options div:hover {
     border-bottom: 2px solid black;
 }

@@ -1,4 +1,5 @@
 <html ng-app="myapp">
+
 <head>
     <base href="/" />
     <title>
@@ -33,7 +34,7 @@
             <a href="#/login">Log in</a>
         </div>
         <div ng-hide="!vm.service.userData.logged()">
-            <img style="float:left;"src="vm.service.userData.profilePicture()" onerror="this.src = 'images/outline.png'">
+            <img style="float:left;" src="vm.service.userData.profilePicture()" onerror="this.src = 'images/outline.png'">
             <h3 style="line-height:55px; margin-left:50px;"> Welcome {{vm.service.userData.name()}}</h3>
         </div>
     </div>

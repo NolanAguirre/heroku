@@ -21,7 +21,7 @@ router.post('/', function(req, res) {
         })
 })
 router.put('/', function(req, res) {
-    db.none('INSERT INTO ' + req.body.user.username + '(username, message[10], proirity[10] VALUES $1, NULL, NULL);', req.body.friend)
+    db.none('INSERT INTO ' + req.body.user.username + '(username, message[20], sent VALUES $1 , NULL);', req.body.friend)
         .then(function(data) {
             if (data.exists) {
                 res.send(true).status(200);

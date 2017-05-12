@@ -58,7 +58,8 @@ function create_account_controller($http) {
             $http.post('/create_account', {
                 user: {
                     username: vm.username,
-                    password: vm.password
+                    password: vm.password,
+                    name: vm.name
                 }
             });
             window.location.href = '/#/create_account/upload_picture';

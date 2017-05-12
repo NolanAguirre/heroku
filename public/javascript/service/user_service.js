@@ -16,7 +16,7 @@ function user_service($cookies) {
         profilePicture: function() {
             return $cookies.get('profilePicture')
         },
-        friends: ['bob', 'joe', 'dave', 'chuck', 'jacob', 'david', 'hi', 'hi', 'chuck', 'jacob', 'david', 'hi', 'hi']
+        friends: []
     }
     service.loadUserData = function(data) {
         var date = new Date();
@@ -35,6 +35,7 @@ function user_service($cookies) {
         });
         console.log(data.friends);
         data.friends.forEach(function(friend) {
+            vm.userData.friends.push(friend)
             $cookies.put(friend.username, friend, {
                 expires: date
             });

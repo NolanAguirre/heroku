@@ -24,7 +24,7 @@ router.post('/', function(req, res) {
         .catch(function(error) {
             console.log('ERROR:' + error)
         })
-    db.none('INSERT INTO users (username, password) VALUES ($1, $2);', [req.body.user.username, req.body.user.password])
+    db.none('INSERT INTO users (username, password, name) VALUES ($1, $2, $3);', [req.body.user.username, req.body.user.password, req.body.user.name])
         .then(function(data) {
             res.send(true).status(200);
         })

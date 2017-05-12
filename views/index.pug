@@ -20,11 +20,11 @@
         <div>
             <h1>Node Demo Server</h1>
         </div>
-        <div class="nav-bar-options">
-            <div>
+        <div class="nav-bar-options" >
+            <div ng-hide="!vm.service.userData.logged()">
                 <a href="#/chat">Chat</a>
             </div>
-            <div>
+            <div ng-hide="!vm.service.userData.logged()">
                 <a href="#/add_friends">Add Friends</a>
             </div>
         </div>
@@ -40,12 +40,12 @@
     </div>
     <div ng-view>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
-    <!-- <script src="javascript/angular/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script> -->
+    <script src="javascript/angular/angular.js"></script>
     <script src="javascript/angular-route/angular-route.js"></script>
-    <script src="javascript/angular-cookies/angular-cookies.js"></script> -->
+    <script src="javascript/angular-cookies/angular-cookies.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="javascript/index.js"></script>
     <script src="javascript/index.js"></script>

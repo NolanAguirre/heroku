@@ -7,7 +7,7 @@ exports.login = function(req, res) {
                 res.json({
                     logged: true,
                     username: req.body.user.username,
-                    name: "dave",
+                    name: data.name,
                     profilePicture: "",
                     friends: loadFriends(req.body.user.username)
                 });

@@ -118,6 +118,7 @@
 }
 
 .chat-bubble {
+    max-width: 200px;
     background-color: #169055;
     word-wrap: break-word;
     margin: 0px 10px 10px 10px;

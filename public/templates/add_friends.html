@@ -1,8 +1,8 @@
 <div class="main-body" ng-controller="add_friend_controller as vm">
     <div class="form">
-        <input ng-model="vm.username" placeholder="search for user"></input>
+        <input ng-change="vm.send()"ng-model="vm.username" placeholder="search for user"></input>
     </div>
-    <div class="friend">
+    <div ng-if="vm.userData != null" class="friend">
         <img style="float:left;" src="vm.userData.profilePicture()" onerror="this.src = 'images/outline.png'">
         {{vm.userData.profilePicture}}
         {{vm.userData.profilePicture}}
